@@ -10,21 +10,12 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.provisioning.UserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 @EnableWebSecurity
 public class SegurancaConfig {
-
-    @Bean
-    public InMemoryUserDetailsManager configuracaoDeUsuario() {
-        UserDetails jorge = User.withDefaultPasswordEncoder()
-                .username("jorge")
-                .password("123")
-                .roles("ADMIN") //mandatory
-                .build();
-        return new InMemoryUserDetailsManager(jorge);
-    }
 
     @Bean
     public SecurityFilterChain configuracao(HttpSecurity http) throws Exception {
