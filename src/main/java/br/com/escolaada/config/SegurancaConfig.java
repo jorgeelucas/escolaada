@@ -28,8 +28,19 @@ public class SegurancaConfig {
 
     @Bean
     public SecurityFilterChain configuracao(HttpSecurity http) throws Exception {
-        return http.csrf(AbstractHttpConfigurer::disable)
+        return http
+                // this is for H2 to work fine
+                .headers(headers -> {
+                    headers.frameOptions(frameOptionsConfig -> {
+                        frameOptionsConfig.sameOrigin();
+                    });
+                })
+                .csrf(csrf -> {
+                    csrf.disable();
+                    csrf.ignoringAntMatchers("/h2-console/**");
+                })
                 .authorizeRequests(auth -> {
+                    auth.antMatchers("/h2-console/**").permitAll();
                     auth.anyRequest().authenticated();
                 })
                 .httpBasic(Customizer.withDefaults())
