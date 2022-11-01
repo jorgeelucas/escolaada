@@ -6,12 +6,9 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.io.Serializable;
 import java.util.Collection;
-import java.util.UUID;
 
 @Entity
 @Data
@@ -19,7 +16,6 @@ public class Usuario implements UserDetails, Serializable { // implements UserDe
     private static final long serialVersionUID = 1;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private String id; // tipo mais apropriado para sistemas distribuidos
 
     @Column(nullable = false, unique = true)
