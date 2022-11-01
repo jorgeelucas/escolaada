@@ -1,0 +1,33 @@
+SHOW TABLES;
+-- INSERT INTO DISCIPLINA(nome, descricao) VALUES ('Português', 'acentuação e ortografia');
+-- INSERT INTO DISCIPLINA(nome, descricao) VALUES ('Matemática', 'Calculo de funções');
+-- INSERT INTO DISCIPLINA(nome, descricao) VALUES ('Biologia', 'Cromossomos');
+-- INSERT INTO DISCIPLINA(nome, descricao) VALUES ('Geografia', 'Globalização e Países Emergentes');
+-- INSERT INTO DISCIPLINA(nome, descricao) VALUES ('História Americana', 'Revolução Americana');
+-- INSERT INTO DISCIPLINA(nome, descricao) VALUES ('História Francesa', 'Revolução Francesa');
+-- INSERT INTO DISCIPLINA(nome, descricao) VALUES ('História Renascimento', 'Renascimento');
+-- INSERT INTO DISCIPLINA(nome, descricao) VALUES ('Literatura', 'Realismo e Naturalismo');
+-- INSERT INTO DISCIPLINA(nome, descricao) VALUES ('Química', 'Compostos Orgânicos: Sais Orgânicos, Ésteres, Éteres e Haletos Orgânicos');
+-- INSERT INTO DISCIPLINA(nome, descricao) VALUES ('Bioquímica', 'carboidratos, açúcares, glúcides e glicídios');
+--
+--
+-- INSERT INTO ALUNO(nome) VALUES ('Lorena Lima');
+-- INSERT INTO ALUNO(nome) VALUES ('Joaquim Melo');
+-- INSERT INTO ALUNO(nome) VALUES ('Luna Barros');
+-- INSERT INTO ALUNO(nome) VALUES ('Marcela Caldeira');
+-- INSERT INTO ALUNO(nome) VALUES ('Heitor Almeida');
+-- INSERT INTO ALUNO(nome) VALUES ('Vinicius Nunes');
+-- INSERT INTO ALUNO(nome) VALUES ('Ana Vitória Fogaça');
+-- INSERT INTO ALUNO(nome) VALUES ('Isis Farias');
+-- INSERT INTO ALUNO(nome) VALUES ('Rebeca Carvalho');
+-- INSERT INTO ALUNO(nome) VALUES ('Guilherme Correia');
+-- INSERT INTO ALUNO(nome) VALUES ('Sr. Vinicius Aragão');
+-- INSERT INTO ALUNO(nome) VALUES ('Srta. Ana Clara Porto');
+-- INSERT INTO ALUNO(nome) VALUES ('Alana da Cunha');
+-- INSERT INTO ALUNO(nome) VALUES ('Ian Teixeira');
+-- INSERT INTO ALUNO(nome) VALUES ('Pedro Henrique da Mata');
+-- INSERT INTO ALUNO(nome) VALUES ('Antônio Farias');
+-- INSERT INTO ALUNO(nome) VALUES ('Thiago Porto');
+-- INSERT INTO ALUNO(nome) VALUES ('Luiz Miguel Campos');
+-- INSERT INTO ALUNO(nome) VALUES ('Ian Viana');
+-- INSERT INTO ALUNO(nome) VALUES ('Beatriz Rodrigues');
