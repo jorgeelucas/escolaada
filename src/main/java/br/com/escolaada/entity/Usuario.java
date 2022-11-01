@@ -20,7 +20,7 @@ public class Usuario implements UserDetails, Serializable { // implements UserDe
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id; // tipo mais apropriado para sistemas distribuidos
+    private String id; // tipo mais apropriado para sistemas distribuidos
 
     @Column(nullable = false, unique = true)
     private String usuario;
