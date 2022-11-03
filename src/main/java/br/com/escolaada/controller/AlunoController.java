@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -22,7 +23,7 @@ public class AlunoController {
     private final AlunoService alunoService;
 
     @PostMapping
-    public ResponseEntity<Void> addAluno(@RequestBody AlunoRequestDTO aluno) {
+    public ResponseEntity<Void> addAluno(@RequestBody @Valid AlunoRequestDTO aluno) {
         alunoService.createStudent(aluno);
         return ResponseEntity.created(null).build();
     }
