@@ -1,21 +1,23 @@
 package br.com.escolaada.config;
 
+import br.com.escolaada.security.JwtUsernameAndPasswordAutenticationFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.Customizer;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
-import org.springframework.security.provisioning.UserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 @EnableWebSecurity
 public class SegurancaConfig {
+
+    private final AuthenticationManager autenticador;
+
+    public SegurancaConfig(AuthenticationManager autenticador) {
+        this.autenticador = autenticador;
+    }
 
     @Bean
     public SecurityFilterChain configuracao(HttpSecurity http) throws Exception {
@@ -26,6 +28,7 @@ public class SegurancaConfig {
                         frameOptionsConfig.sameOrigin();
                     });
                 })
+                .addFilter(new JwtUsernameAndPasswordAutenticationFilter(autenticador))
                 .csrf(csrf -> {
                     csrf.disable();
                     csrf.ignoringAntMatchers("/h2-console/**");
@@ -34,7 +37,6 @@ public class SegurancaConfig {
                     auth.antMatchers("/h2-console/**").permitAll();
                     auth.anyRequest().authenticated();
                 })
-                .httpBasic(Customizer.withDefaults())
                 .sessionManagement(sessionManagerCustomizer ->
                         sessionManagerCustomizer.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .build();
