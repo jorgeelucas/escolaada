@@ -1,5 +1,6 @@
 package br.com.escolaada.config;
 
+import br.com.escolaada.security.JwtTokenVerificador;
 import br.com.escolaada.security.JwtUsernameAndPasswordAutenticationFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -29,6 +30,7 @@ public class SegurancaConfig {
                     });
                 })
                 .addFilter(new JwtUsernameAndPasswordAutenticationFilter(autenticador))
+                .addFilterAfter(new JwtTokenVerificador(), JwtUsernameAndPasswordAutenticationFilter.class)
                 .csrf(csrf -> {
                     csrf.disable();
                     csrf.ignoringAntMatchers("/h2-console/**");

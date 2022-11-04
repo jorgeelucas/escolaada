@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -22,10 +23,11 @@ public class JwtUsernameAndPasswordAutenticationFilter extends UsernamePasswordA
 
     private final AuthenticationManager autenticador;
 
+    private static final String SECRET_KEY = "secretkey_secretkey_secretkey_secretkey_secretkey_secretkey_secretkey_secretkey_secretkey_secretkey_secretkey_secretkey_secretkey_secretkey_secretkey_secretkey_secretkey_secretkey_secretkey_secretkey_secretkey_";
+
     public JwtUsernameAndPasswordAutenticationFilter(AuthenticationManager autenticador) {
         this.autenticador = autenticador;
     }
-
 
     @Override
     public Authentication attemptAuthentication(HttpServletRequest request,
@@ -59,14 +61,13 @@ public class JwtUsernameAndPasswordAutenticationFilter extends UsernamePasswordA
                                             Authentication authResult) throws IOException, ServletException {
 
         // criar o token
-        byte[] secretKey = "secretsecretsecret-??6==_=#RngHeR8~;Fbxd/]jm4J6tZ2=?X#8;Q3#fGOAf%=5zB1gHcf2]H%0K4NamyF&5B4^c_HV])PP#eGce]wL=secretsecretsecret".getBytes();
 
         String token = Jwts.builder()
                 .setSubject(authResult.getName())
                 .claim("nomeUsuario", authResult.getName())
                 .setIssuedAt(new Date())
                 .setExpiration(new Date(new Date().getTime() + 600_000)) // 10 * 60 * 1000 = 10 min
-                .signWith(Keys.hmacShaKeyFor(secretKey))
+                .signWith(Keys.hmacShaKeyFor(SECRET_KEY.getBytes()))
                 .compact();
 
         String bearerToken = "Bearer " + token;

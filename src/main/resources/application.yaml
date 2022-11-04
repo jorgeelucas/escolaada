@@ -22,3 +22,6 @@ spring:
         defer-datasource-initialization: true
         database-platform: org.hibernate.dialect.H2Dialect
     defer-datasource-initialization: true
+
+secret:
+  key: "secretsecretsecret-??6==_=#RngHeR8~;Fbxd/]jm4J6tZ2=?X#8;Q3#fGOAf%=5zB1gHcf2]H%0K4NamyF&5B4^c_HV])PP#eGce]wL=secretsecretsecret"
