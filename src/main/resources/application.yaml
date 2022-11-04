@@ -22,3 +22,7 @@ spring:
         defer-datasource-initialization: true
         database-platform: org.hibernate.dialect.H2Dialect
     defer-datasource-initialization: true
+
+rsa:
+  private-key: classpath:certs/private.pem
+  public-key: classpath:certs/public.pem
