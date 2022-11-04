@@ -22,3 +22,11 @@ openssl rsa -in keypair.pem -pubout -out public.pem
 ```shell
 openssl pkcs8 -topk8 -inform PEM -outform PEM -nocrypt -in keypair.pem -out private.pem
 ```
+
+## Referências
+
+- https://www.danvega.dev/blog/2022/09/06/spring-security-jwt/
+- https://docs.spring.io/spring-security/reference/servlet/oauth2/resource-server/jwt.html
+- [spring-security-oauth2-jose dependency](https://mvnrepository.com/artifact/org.springframework.security/spring-security-oauth2-jose/5.7.5)
+- [Youtube Dan - video 1](https://www.youtube.com/watch?v=KYNR5js2cXE)
+- [Youtube Dan - video 2](https://www.youtube.com/watch?v=UaB-0e76LdQ)
