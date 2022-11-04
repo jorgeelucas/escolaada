@@ -1,4 +1,9 @@
 -- SHOW TABLES;
+-- 123 : $2a$10$63HsDHNsQ1x3KBa6g2/Eo.7UAcfS.vuZsOp941RbOLFIrC1bjhE9.
+-- uid : ea821100-59a2-11ed-9d7b-5198656d6a3a
+INSERT INTO usuario(id, usuario, senha)
+VALUES ('ea821100-59a2-11ed-9d7b-5198656d6a3a', 'maria', '$2a$10$63HsDHNsQ1x3KBa6g2/Eo.7UAcfS.vuZsOp941RbOLFIrC1bjhE9.');
+
 INSERT INTO disciplina(nome, descricao) VALUES ('Português', 'acentuação e ortografia');
 INSERT INTO disciplina(nome, descricao) VALUES ('Matemática', 'Calculo de funções');
 INSERT INTO disciplina(nome, descricao) VALUES ('Biologia', 'Cromossomos');
